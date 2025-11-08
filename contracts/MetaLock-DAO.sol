@@ -1,20 +1,6 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract MetaLockDAO is Ownable {
-    IERC20 public governanceToken;            // Governance token for voting
-    uint256 public proposalCount;             // Total proposals counter
-    uint256 public votingPeriod;              // Voting period duration in blocks
-    uint256 public quorumPercentage;          // Minimum % token vote for quorum
-
-    struct Proposal {
-        uint256 id;
-        address proposer;
-        string description;
-        uint256 deadline;                     // Block number voting ends
+Governance token for voting
+    uint256 public proposalCount;             Voting period duration in blocks
+    uint256 public quorumPercentage;          Block number voting ends
         uint256 votesFor;
         uint256 votesAgainst;
         bool executed;
@@ -82,8 +68,7 @@ contract MetaLockDAO is Ownable {
         require(totalVotes >= quorumVotes, "Quorum not reached");
         require(proposal.votesFor > proposal.votesAgainst, "Proposal not approved");
 
-        // Execute proposal action here as per DAO logic
-        // This is a placeholder for real-world implementation
+        This is a placeholder for real-world implementation
 
         proposal.executed = true;
         emit ProposalExecuted(_proposalId, true);
@@ -115,3 +100,6 @@ contract MetaLockDAO is Ownable {
         return proposals[_proposalId].voters[voter];
     }
 }
+// 
+End
+// 
