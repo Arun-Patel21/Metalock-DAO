@@ -74,32 +74,8 @@ Governance token for voting
         emit ProposalExecuted(_proposalId, true);
     }
 
-    // View functions for proposal details without exposing internal mapping voters
-    function getProposal(uint256 _proposalId) external view returns (
-        uint256 id,
-        address proposer,
-        string memory description,
-        uint256 deadline,
-        uint256 votesFor,
-        uint256 votesAgainst,
-        bool executed
-    ) {
-        Proposal storage proposal = proposals[_proposalId];
-        return (
-            proposal.id,
-            proposal.proposer,
-            proposal.description,
-            proposal.deadline,
-            proposal.votesFor,
-            proposal.votesAgainst,
-            proposal.executed
-        );
-    }
-
-    function hasVoted(uint256 _proposalId, address voter) external view returns (bool) {
-        return proposals[_proposalId].voters[voter];
-    }
-}
+    End
+// 
 // 
 End
 // 
